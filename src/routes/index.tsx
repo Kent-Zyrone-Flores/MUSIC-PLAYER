@@ -7,6 +7,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Play } from "lucide-react";
 import { useEffect, useState } from "react";
 
+const zLogo = "/images/zlogo.jpg";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -20,6 +22,14 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Play the music files stored on your own computer with playlists, favorites and a queue.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: zLogo },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: zLogo },
+    ],
+    links: [
+      { rel: "icon", href: zLogo },
+      { rel: "apple-touch-icon", href: zLogo },
     ],
   }),
   component: Home,

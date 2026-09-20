@@ -1,4 +1,3 @@
-import { ImportButton } from "@/components/ImportButton";
 import { useNavigate, useRouterState } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -26,7 +25,6 @@ export function Topbar() {
           className="w-full rounded-full border border-input bg-surface py-2 pl-9 pr-4 text-sm outline-none transition focus:border-primary"
         />
       </div>
-      <ImportButton className="hidden sm:inline-flex" />
     </header>
   );
 }

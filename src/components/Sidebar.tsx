@@ -1,4 +1,3 @@
-import { ImportButton } from "@/components/ImportButton";
 import { usePlayer } from "@/context/PlayerContext";
 import { Link } from "@tanstack/react-router";
 import { Clock, Disc3, Heart, Home, ListMusic, Mic2, Music4 } from "lucide-react";
@@ -78,8 +77,6 @@ export function Sidebar() {
           ))}
         </div>
       )}
-
-      <ImportButton className="mt-auto w-full justify-center" />
     </aside>
   );
 }

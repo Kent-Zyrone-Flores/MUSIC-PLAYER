@@ -36,6 +36,10 @@ type PlayerContextValue = {
   volume: number;
   shuffle: boolean;
   repeat: RepeatMode;
+  showVideo: boolean;
+  toggleVideo: () => void;
+  /** Called by VideoStage so the context can route playback through the <video> element. */
+  registerVideoElement: (el: HTMLVideoElement | null) => void;
   importFiles: (files: FileList | File[]) => Promise<number>;
   removeSong: (id: string) => void;
   playSong: (id: string, list?: string[]) => void;
@@ -69,11 +73,26 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [mediaUrl, setMediaUrl] = useState<string | null>(null);
+  const [showVideo, setShowVideo] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const urlRef = useRef<string | null>(null);
   const libRef = useRef(lib);
   libRef.current = lib;
+
+  /** The element currently responsible for audio output. */
+  const activeEl = useCallback((): HTMLMediaElement | null => {
+    const song = libRef.current.songs.find((s) => s.id === currentIdRef.current);
+    const useVideo = showVideoRef.current && song?.mediaType === "video" && videoRef.current;
+    return useVideo ? videoRef.current : audioRef.current;
+  }, []);
+
+  // Keep currentId + showVideo readable inside stable callbacks.
+  const currentIdRef = useRef<string | null>(null);
+  currentIdRef.current = currentId;
+  const showVideoRef = useRef(false);
+  showVideoRef.current = showVideo;
 
   useEffect(() => {
     setLib(loadLibrary());
@@ -97,26 +116,124 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
 
   const getSong = useCallback((id: string) => libRef.current.songs.find((s) => s.id === id), []);
 
-  const loadAndPlay = useCallback(async (id: string) => {
+  /** Push a URL into both audio and video elements so either can play instantly. */
+  const setSourceOnElements = useCallback((url: string) => {
     const audio = audioRef.current;
-    if (!audio) return;
+    const video = videoRef.current;
+    if (audio) {
+      audio.src = url;
+      audio.volume = libRef.current.volume;
+    }
+    if (video) {
+      video.src = url;
+      video.volume = libRef.current.volume;
+    }
+  }, []);
+
+  const loadAndPlay = useCallback(
+  async (id: string) => {
     const song = libRef.current.songs.find((item) => item.id === id);
+    if (song?.mediaType !== "video") setShowVideo(false);
+
     const blob = song?.source ? null : await getFile(id);
     if (!song?.source && !blob) return;
+
     if (urlRef.current?.startsWith("blob:")) URL.revokeObjectURL(urlRef.current);
     const url = song?.source ?? URL.createObjectURL(blob as Blob);
     urlRef.current = url;
     setMediaUrl(url);
-    audio.src = url;
-    audio.volume = libRef.current.volume;
+    setSourceOnElements(url);
+
+    // Pick the element that should own playback for this track.
+    const useVideo = song?.mediaType === "video" && showVideoRef.current && videoRef.current;
+    const el = (useVideo ? videoRef.current : audioRef.current) as HTMLMediaElement | null;
+    const other = useVideo ? audioRef.current : videoRef.current;
+    if (!el) return;
+
+    // Make sure the other element is silent so nothing double-plays.
+    if (other) {
+      other.pause();
+    }
+
+    // Wait until the element actually has enough data to start playing.
+    // Without this, `play()` right after setting `src` rejects and the track
+    // looks like it "paused" until the user clicks play again.
+    if (el.readyState < 2) {
+      await new Promise<void>((resolve) => {
+        const done = () => {
+          el.removeEventListener("loadeddata", done);
+          el.removeEventListener("canplay", done);
+          el.removeEventListener("error", done);
+          resolve();
+        };
+        el.addEventListener("loadeddata", done);
+        el.addEventListener("canplay", done);
+        el.addEventListener("error", done);
+        // Safety timeout in case the events never fire.
+        setTimeout(done, 4000);
+      });
+    }
+
+    el.volume = libRef.current.volume;
+    el.currentTime = 0;
+
     try {
-      await audio.play();
+      await el.play();
       setIsPlaying(true);
     } catch {
+      // Autoplay might still be blocked if the tab lost focus; leave paused.
       setIsPlaying(false);
     }
-    setLib((prev) => ({ ...prev, recent: [id, ...prev.recent.filter((r) => r !== id)].slice(0, 40) }));
+
+    setLib((prev) => ({
+      ...prev,
+      recent: [id, ...prev.recent.filter((r) => r !== id)].slice(0, 40),
+    }));
+  },
+  [setSourceOnElements],
+);
+
+  const registerVideoElement = useCallback((el: HTMLVideoElement | null) => {
+    videoRef.current = el;
+    if (!el) return;
+    // If the current song is a video and we're in video mode, move playback to it.
+    const song = libRef.current.songs.find((s) => s.id === currentIdRef.current);
+    if (song?.mediaType === "video" && showVideoRef.current && urlRef.current) {
+      const wasPlaying = isPlayingRef.current;
+      el.src = urlRef.current;
+      el.volume = libRef.current.volume;
+      if (wasPlaying) void el.play().catch(() => {});
+      // Silence the audio element so only the video plays.
+      audioRef.current?.pause();
+    }
   }, []);
+
+  const isPlayingRef = useRef(false);
+  isPlayingRef.current = isPlaying;
+
+  // When video is toggled on/off, switch the active element without losing position.
+  useEffect(() => {
+    const song = libRef.current.songs.find((s) => s.id === currentId);
+    if (!song || song.mediaType !== "video") return;
+    const video = videoRef.current;
+    const audio = audioRef.current;
+    if (!video || !audio || !urlRef.current) return;
+
+    if (showVideo) {
+      const t = audio.currentTime;
+      video.currentTime = t;
+      video.volume = libRef.current.volume;
+      if (isPlaying) void video.play().catch(() => {});
+      audio.pause();
+    } else {
+      const t = video.currentTime;
+      audio.currentTime = t;
+      audio.volume = libRef.current.volume;
+      if (isPlaying) void audio.play().catch(() => {});
+      video.pause();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showVideo]);
 
   const advance = useCallback(
     (dir: 1 | -1) => {
@@ -127,7 +244,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       if (nextIdx >= q.length) {
         if (libRef.current.repeat === "off") {
           setIsPlaying(false);
-          audioRef.current?.pause();
+          activeEl()?.pause();
           return;
         }
         nextIdx = 0;
@@ -138,31 +255,60 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       setCurrentId(nextId);
       void loadAndPlay(nextId);
     },
-    [queue, currentId, loadAndPlay],
+    [queue, currentId, loadAndPlay, activeEl],
   );
 
+  // Wire listeners to BOTH elements. Whichever one is playing drives state.
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    const onTime = () => setCurrentTime(audio.currentTime);
-    const onMeta = () => setDuration(audio.duration || 0);
-    const onEnd = () => {
+
+    const onTime = (e: Event) => {
+      const el = e.currentTarget as HTMLMediaElement;
+      if (el === activeEl()) setCurrentTime(el.currentTime);
+    };
+    const onMeta = (e: Event) => {
+      const el = e.currentTarget as HTMLMediaElement;
+      if (el === activeEl()) setDuration(el.duration || 0);
+    };
+    const onEnd = (e: Event) => {
+      const el = e.currentTarget as HTMLMediaElement;
+      if (el !== activeEl()) return;
       if (libRef.current.repeat === "one") {
-        audio.currentTime = 0;
-        void audio.play();
+        el.currentTime = 0;
+        void el.play();
         return;
       }
       advance(1);
     };
-    audio.addEventListener("timeupdate", onTime);
-    audio.addEventListener("loadedmetadata", onMeta);
-    audio.addEventListener("ended", onEnd);
-    return () => {
-      audio.removeEventListener("timeupdate", onTime);
-      audio.removeEventListener("loadedmetadata", onMeta);
-      audio.removeEventListener("ended", onEnd);
+    const onPlay = (e: Event) => {
+      if (e.currentTarget === activeEl()) setIsPlaying(true);
     };
-  }, [advance]);
+    const onPause = (e: Event) => {
+      if (e.currentTarget === activeEl()) setIsPlaying(false);
+    };
+
+    const targets: HTMLMediaElement[] = [audio];
+    if (videoRef.current) targets.push(videoRef.current);
+
+    targets.forEach((el) => {
+      el.addEventListener("timeupdate", onTime);
+      el.addEventListener("loadedmetadata", onMeta);
+      el.addEventListener("ended", onEnd);
+      el.addEventListener("play", onPlay);
+      el.addEventListener("pause", onPause);
+    });
+    return () => {
+      targets.forEach((el) => {
+        el.removeEventListener("timeupdate", onTime);
+        el.removeEventListener("loadedmetadata", onMeta);
+        el.removeEventListener("ended", onEnd);
+        el.removeEventListener("play", onPlay);
+        el.removeEventListener("pause", onPause);
+      });
+    };
+    // Re-attach when the video element is registered (showVideo toggles it into existence).
+  }, [advance, activeEl, showVideo]);
 
   const readDuration = (file: File) =>
     new Promise<number>((resolve) => {
@@ -180,7 +326,10 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
 
   const importFiles = useCallback(async (files: FileList | File[]) => {
     const list = Array.from(files).filter(
-      (f) => f.type.startsWith("audio/") || f.type.startsWith("video/") || /\.(mp3|wav|ogg|flac|m4a|aac|mp4|webm|mov|mkv)$/i.test(f.name),
+      (f) =>
+        f.type.startsWith("audio/") ||
+        f.type.startsWith("video/") ||
+        /\.(mp3|wav|ogg|flac|m4a|aac|mp4|webm|mov|mkv)$/i.test(f.name),
     );
     const added: Song[] = [];
     for (const file of list) {
@@ -194,7 +343,10 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
         album: "Imported",
         duration: await readDuration(file),
         addedAt: Date.now(),
-        mediaType: file.type.startsWith("video/") || /\.(mp4|webm|mov|mkv)$/i.test(file.name) ? "video" : "audio",
+        mediaType:
+          file.type.startsWith("video/") || /\.(mp4|webm|mov|mkv)$/i.test(file.name)
+            ? "video"
+            : "audio",
       });
     }
     if (added.length) setLib((prev) => ({ ...prev, songs: [...prev.songs, ...added] }));
@@ -228,18 +380,20 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       }));
       setQueue((q) => q.filter((q1) => q1 !== id));
       if (currentId === id) {
-        audioRef.current?.pause();
+        activeEl()?.pause();
         setCurrentId(null);
         setIsPlaying(false);
       }
     },
-    [currentId],
+    [currentId, activeEl],
   );
 
   const playSong = useCallback(
     (id: string, list?: string[]) => {
       const base = list ?? libRef.current.songs.map((s) => s.id);
-      const ordered = libRef.current.shuffle ? [id, ...shuffleArray(base.filter((s) => s !== id))] : base;
+      const ordered = libRef.current.shuffle
+        ? [id, ...shuffleArray(base.filter((s) => s !== id))]
+        : base;
       setQueue(ordered);
       setCurrentId(id);
       void loadAndPlay(id);
@@ -248,35 +402,37 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   );
 
   const togglePlay = useCallback(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
     if (!currentId) {
       const first = libRef.current.songs[0];
       if (first) playSong(first.id);
       return;
     }
-    if (audio.paused) {
-      void audio.play();
-      setIsPlaying(true);
-    } else {
-      audio.pause();
-      setIsPlaying(false);
-    }
-  }, [currentId, playSong]);
+    const el = activeEl();
+    if (!el) return;
+    if (el.paused) void el.play();
+    else el.pause();
+  }, [currentId, playSong, activeEl]);
 
-  const seek = useCallback((time: number) => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.currentTime = time;
-    setCurrentTime(time);
-  }, []);
+  const seek = useCallback(
+    (time: number) => {
+      const el = activeEl();
+      if (!el) return;
+      el.currentTime = time;
+      setCurrentTime(time);
+    },
+    [activeEl],
+  );
 
   const setVolume = useCallback(
     (v: number) => {
+      const el = activeEl();
+      if (el) el.volume = v;
+      // Keep both elements at the same level so switching stays seamless.
       if (audioRef.current) audioRef.current.volume = v;
+      if (videoRef.current) videoRef.current.volume = v;
       update({ volume: v });
     },
-    [update],
+    [update, activeEl],
   );
 
   const value = useMemo<PlayerContextValue>(
@@ -297,13 +453,17 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       volume: lib.volume,
       shuffle: lib.shuffle,
       repeat: lib.repeat,
+      showVideo,
+      toggleVideo: () => setShowVideo((v) => !v),
+      registerVideoElement,
       importFiles,
       removeSong,
       playSong,
       togglePlay,
       next: () => advance(1),
       previous: () => {
-        if (audioRef.current && audioRef.current.currentTime > 3) {
+        const el = activeEl();
+        if (el && el.currentTime > 3) {
           seek(0);
           return;
         }
@@ -313,7 +473,9 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       setVolume,
       toggleShuffle: () => update({ shuffle: !lib.shuffle }),
       cycleRepeat: () =>
-        update({ repeat: lib.repeat === "off" ? "all" : lib.repeat === "all" ? "one" : "off" }),
+        update({
+          repeat: lib.repeat === "off" ? "all" : lib.repeat === "all" ? "one" : "off",
+        }),
       toggleFavorite: (id) =>
         update({
           favorites: lib.favorites.includes(id)
@@ -366,6 +528,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       isPlaying,
       currentTime,
       duration,
+      showVideo,
       importFiles,
       removeSong,
       playSong,
@@ -376,6 +539,8 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       update,
       getSong,
       downloadSong,
+      registerVideoElement,
+      activeEl,
     ],
   );
 

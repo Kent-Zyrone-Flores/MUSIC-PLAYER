@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { Cover } from "@/components/Cover";
+import { usePlayer } from "@/context/PlayerContext";
+import { formatTime } from "@/lib/library";
+import { cn } from "@/lib/utils";
 import {
   Heart,
   ListMusic,
@@ -9,14 +12,13 @@ import {
   Shuffle,
   SkipBack,
   SkipForward,
+  Video,
+  VideoOff,
   Volume2,
   VolumeX,
   X,
 } from "lucide-react";
-import { usePlayer } from "@/context/PlayerContext";
-import { Cover } from "@/components/Cover";
-import { formatTime } from "@/lib/library";
-import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export function PlayerBar() {
   const {
@@ -40,6 +42,8 @@ export function PlayerBar() {
     getSong,
     playSong,
     removeFromQueue,
+    showVideo,
+    toggleVideo,
   } = usePlayer();
   const [showQueue, setShowQueue] = useState(false);
   const total = duration || currentSong?.duration || 0;
@@ -159,6 +163,19 @@ export function PlayerBar() {
         </div>
 
         <div className="flex flex-1 items-center justify-end gap-3">
+          {currentSong?.mediaType === "video" && (
+            <button
+              type="button"
+              aria-label={showVideo ? "Hide video" : "Show video"}
+              onClick={toggleVideo}
+              className={cn(
+                "text-muted-foreground transition hover:text-foreground",
+                showVideo && "text-primary",
+              )}
+            >
+              {showVideo ? <Video className="h-4 w-4" /> : <VideoOff className="h-4 w-4" />}
+            </button>
+          )}
           <button
             type="button"
             aria-label="Queue"

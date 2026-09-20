@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import { PlayerBar } from "@/components/PlayerBar";
 import { Sidebar } from "@/components/Sidebar";
 import { Topbar } from "@/components/Topbar";
+import { VideoStage } from "@/components/VideoStage";
 import { Toaster } from "@/components/ui/sonner";
 import { PlayerProvider } from "@/context/PlayerContext";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -139,6 +140,7 @@ function RootComponent() {
             </div>
           </div>
           <PlayerBar />
+          <VideoStage />
         </div>
         <Toaster position="top-center" />
       </PlayerProvider>
