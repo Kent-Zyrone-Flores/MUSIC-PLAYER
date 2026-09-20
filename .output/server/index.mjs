@@ -16,159 +16,12 @@ globalThis.__nitro_vite_envs__ = services;
 //#endregion
 //#region #nitro/virtual/public-assets-data
 var public_assets_data_default = {
-	"/assets/albums-WJR-Ae3y.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"385-J15beYKDma0qfpkNmhdmxlPKCZA\"",
-		"mtime": "2026-09-20T13:29:50.974Z",
-		"size": 901,
-		"path": "../public/assets/albums-WJR-Ae3y.js"
-	},
-	"/assets/artists-cpYNDifi.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"396-xey8Qx1bag1tzy9CNL0TAwRSvts\"",
-		"mtime": "2026-09-20T13:29:50.975Z",
-		"size": 918,
-		"path": "../public/assets/artists-cpYNDifi.js"
-	},
-	"/assets/favorites-CtQtowYv.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1c4-e3AQbxXFk6If39gq2adwcxZB9P8\"",
-		"mtime": "2026-09-20T13:29:50.976Z",
-		"size": 452,
-		"path": "../public/assets/favorites-CtQtowYv.js"
-	},
-	"/assets/Cover-GmuoUIGE.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"c3f4-VY4p4K8aX+xL9qtfjESaad+SLx0\"",
-		"mtime": "2026-09-20T13:29:50.969Z",
-		"size": 50164,
-		"path": "../public/assets/Cover-GmuoUIGE.js"
-	},
-	"/assets/ImportButton-BwysESbE.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"86dc-DJtqDrMy1VWUtdcDgzy2mfznQUs\"",
-		"mtime": "2026-09-20T13:29:50.970Z",
-		"size": 34524,
-		"path": "../public/assets/ImportButton-BwysESbE.js"
-	},
-	"/assets/link-xl4KRL4L.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"5b1e-7kYzXu/qfXLw8FQSLww2+GxBYM4\"",
-		"mtime": "2026-09-20T13:29:50.977Z",
-		"size": 23326,
-		"path": "../public/assets/link-xl4KRL4L.js"
-	},
-	"/assets/PageHeader-CdnRrfRN.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"2ad-3euaqBp6D/RUmzBxOT/CqPr2tVI\"",
-		"mtime": "2026-09-20T13:29:50.971Z",
-		"size": 685,
-		"path": "../public/assets/PageHeader-CdnRrfRN.js"
-	},
-	"/assets/play-CoS4CEj0.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"214-5UbVgeuz7mxTYgykLv9U09eBphg\"",
-		"mtime": "2026-09-20T13:29:50.978Z",
-		"size": 532,
-		"path": "../public/assets/play-CoS4CEj0.js"
-	},
-	"/assets/playlists.index-DGFHHuyD.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"892-HDWFEJEPFjKVjSmjCIcTKoGPkCE\"",
-		"mtime": "2026-09-20T13:29:50.984Z",
-		"size": 2194,
-		"path": "../public/assets/playlists.index-DGFHHuyD.js"
-	},
-	"/assets/playlists._playlistId-B1UAlCUv.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"7ed-iKpxq2Vc5dAnRuaQh1k8O1EKsVs\"",
-		"mtime": "2026-09-20T13:29:50.980Z",
-		"size": 2029,
-		"path": "../public/assets/playlists._playlistId-B1UAlCUv.js"
-	},
-	"/assets/playlists._playlistId-BEsjk5Gt.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"310-AGTKsM4ZdN4RlrCMjjq2Yw9WxE8\"",
-		"mtime": "2026-09-20T13:29:50.982Z",
-		"size": 784,
-		"path": "../public/assets/playlists._playlistId-BEsjk5Gt.js"
-	},
-	"/assets/plus-D51mXbHp.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"8e-PZQu7Jqmpwqi1/z+ZiWCbDhsR4U\"",
-		"mtime": "2026-09-20T13:29:50.987Z",
-		"size": 142,
-		"path": "../public/assets/plus-D51mXbHp.js"
-	},
-	"/assets/recent-D57hkYj0.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"19d-/FoP9WLiuwCn85geMLHosT+RUMM\"",
-		"mtime": "2026-09-20T13:29:51.000Z",
-		"size": 413,
-		"path": "../public/assets/recent-D57hkYj0.js"
-	},
-	"/assets/routes-BpMawclB.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"bca-YWKlpoUEYcyMni/pIUkZpQ2kPaI\"",
-		"mtime": "2026-09-20T13:29:51.001Z",
-		"size": 3018,
-		"path": "../public/assets/routes-BpMawclB.js"
-	},
-	"/assets/preload-helper-CWsbH28F.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1866-+dfqHoe6prWMOCJ+uMKpvFi6HpY\"",
-		"mtime": "2026-09-20T13:29:50.997Z",
-		"size": 6246,
-		"path": "../public/assets/preload-helper-CWsbH28F.js"
-	},
-	"/assets/search-BNp-Nv7o.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"2ff-LPOo9+J5UAHavA1Uos+MaDtMauU\"",
-		"mtime": "2026-09-20T13:29:51.003Z",
-		"size": 767,
-		"path": "../public/assets/search-BNp-Nv7o.js"
-	},
-	"/assets/search-DW1d-l1N.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"8ef-L1EY+Itm7BU1Lo+GL+O6pdg8ze4\"",
-		"mtime": "2026-09-20T13:29:51.004Z",
-		"size": 2287,
-		"path": "../public/assets/search-DW1d-l1N.js"
-	},
-	"/assets/songs-Bbnbnq_I.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1ee-0b0e06edTNnjnmmrtJE+vZEKwAg\"",
-		"mtime": "2026-09-20T13:29:51.008Z",
-		"size": 494,
-		"path": "../public/assets/songs-Bbnbnq_I.js"
-	},
-	"/assets/index-lX1FXM7y.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"56198-HJohFPkwB4D3lg/qv6XDcQjiJ8w\"",
-		"mtime": "2026-09-20T13:29:50.968Z",
-		"size": 352664,
-		"path": "../public/assets/index-lX1FXM7y.js"
-	},
-	"/assets/SongRow-CBYhmETP.js": {
-		"type": "text/javascript; charset=utf-8",
-		"etag": "\"1704e-U90VcJb4w9RnZCEXfwOLDcjQQwA\"",
-		"mtime": "2026-09-20T13:29:50.973Z",
-		"size": 94286,
-		"path": "../public/assets/SongRow-CBYhmETP.js"
-	},
-	"/assets/styles-83uOQWHz.css": {
-		"type": "text/css; charset=utf-8",
-		"etag": "\"12c20-HAG9VXSMR8GJAkKEGvUBTXIwZ+0\"",
-		"mtime": "2026-09-20T13:29:51.014Z",
-		"size": 76832,
-		"path": "../public/assets/styles-83uOQWHz.css"
-	},
-	"/covers/kpop.jpg": {
-		"type": "image/jpeg",
-		"etag": "\"3c5e-+3pt9+cK6vvbouXfHexBesWPUys\"",
-		"mtime": "2026-09-20T13:13:36.151Z",
-		"size": 15454,
-		"path": "../public/covers/kpop.jpg"
+	"/favicon.svg": {
+		"type": "image/svg+xml",
+		"etag": "\"2532-P1u486agW3ymimJYHS3VvIiBLK8\"",
+		"mtime": "2026-09-17T04:36:37.114Z",
+		"size": 9522,
+		"path": "../public/favicon.svg"
 	},
 	"/icons.svg": {
 		"type": "image/svg+xml",
@@ -177,19 +30,19 @@ var public_assets_data_default = {
 		"size": 5031,
 		"path": "../public/icons.svg"
 	},
-	"/favicon.svg": {
-		"type": "image/svg+xml",
-		"etag": "\"2532-P1u486agW3ymimJYHS3VvIiBLK8\"",
-		"mtime": "2026-09-17T04:36:37.114Z",
-		"size": 9522,
-		"path": "../public/favicon.svg"
-	},
-	"/covers/hiphop.jpg": {
+	"/images/zlogo.jpg": {
 		"type": "image/jpeg",
-		"etag": "\"16688-mTjckVu/sqboHHXm7oTWvJoSuQ4\"",
-		"mtime": "2026-09-20T13:15:11.159Z",
-		"size": 91784,
-		"path": "../public/covers/hiphop.jpg"
+		"etag": "\"6ac5-XTFZ7qZZnF5BBs4QfRcWrThXvO4\"",
+		"mtime": "2026-09-20T13:35:56.125Z",
+		"size": 27333,
+		"path": "../public/images/zlogo.jpg"
+	},
+	"/assets/albums-3RenvXIn.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"38d-w+24XiqopZC6VCKm4Urp6PC5n24\"",
+		"mtime": "2026-09-20T15:19:13.050Z",
+		"size": 909,
+		"path": "../public/assets/albums-3RenvXIn.js"
 	},
 	"/icons/.gitkeep": {
 		"type": "text/plain; charset=utf-8",
@@ -198,12 +51,348 @@ var public_assets_data_default = {
 		"size": 0,
 		"path": "../public/icons/.gitkeep"
 	},
+	"/covers/ai.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"1e884-gm/HGLecD7Q3A8zkoCuinv7eIRM\"",
+		"mtime": "2026-09-20T13:55:38.712Z",
+		"size": 125060,
+		"path": "../public/covers/ai.jpg"
+	},
+	"/covers/hiphop.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"16688-mTjckVu/sqboHHXm7oTWvJoSuQ4\"",
+		"mtime": "2026-09-20T13:15:11.159Z",
+		"size": 91784,
+		"path": "../public/covers/hiphop.jpg"
+	},
+	"/assets/artists-B93xFii9.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"39e-iL56iJ2sp5UJnh4jrbmlfNLj/84\"",
+		"mtime": "2026-09-20T15:19:13.051Z",
+		"size": 926,
+		"path": "../public/assets/artists-B93xFii9.js"
+	},
+	"/assets/favorites-DIpS_VoM.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"1cc-e5qe5wiXfKWkDZIuJiMQtzu6/fY\"",
+		"mtime": "2026-09-20T15:19:13.052Z",
+		"size": 460,
+		"path": "../public/assets/favorites-DIpS_VoM.js"
+	},
+	"/assets/dist-DN-LCTgV.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"82ee-7+17587yctYM0v+yFm3sY97nnSI\"",
+		"mtime": "2026-09-20T15:19:13.051Z",
+		"size": 33518,
+		"path": "../public/assets/dist-DN-LCTgV.js"
+	},
+	"/covers/kpop.jpg": {
+		"type": "image/jpeg",
+		"etag": "\"3c5e-+3pt9+cK6vvbouXfHexBesWPUys\"",
+		"mtime": "2026-09-20T13:13:36.151Z",
+		"size": 15454,
+		"path": "../public/covers/kpop.jpg"
+	},
+	"/assets/ImportButton-Cv2mU3ur.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"471-C5XCUx+L7bz/l91rpm3cQNjviJM\"",
+		"mtime": "2026-09-20T15:19:13.045Z",
+		"size": 1137,
+		"path": "../public/assets/ImportButton-Cv2mU3ur.js"
+	},
+	"/assets/link-DklkTnt1.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"5b26-bHBk0yAXst/IUtp4Nmi2+q3EbZ4\"",
+		"mtime": "2026-09-20T15:19:13.052Z",
+		"size": 23334,
+		"path": "../public/assets/link-DklkTnt1.js"
+	},
+	"/assets/play-zKXbR9yQ.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"21c-DrPAB91pU6CrqnsIR3HkwJL+QAY\"",
+		"mtime": "2026-09-20T15:19:13.053Z",
+		"size": 540,
+		"path": "../public/assets/play-zKXbR9yQ.js"
+	},
+	"/assets/PageHeader-CcLPvDAF.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"2b5-vwwT1g87Kz4Xjn72aQ2zhDVUtHI\"",
+		"mtime": "2026-09-20T15:19:13.048Z",
+		"size": 693,
+		"path": "../public/assets/PageHeader-CcLPvDAF.js"
+	},
+	"/assets/playlists.index-BYeHx_BF.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"890-JU+PMey3J2pbqpag3RHx9FpVLbw\"",
+		"mtime": "2026-09-20T15:19:13.055Z",
+		"size": 2192,
+		"path": "../public/assets/playlists.index-BYeHx_BF.js"
+	},
+	"/assets/playlists._playlistId-BcA0GPMZ.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"7f5-ID4SELu5A44sl7NRhYWAQ4EsDVc\"",
+		"mtime": "2026-09-20T15:19:13.053Z",
+		"size": 2037,
+		"path": "../public/assets/playlists._playlistId-BcA0GPMZ.js"
+	},
+	"/assets/index-DY2-0U6V.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"56edc-+aMfaNsaR3Y0z9xOT5x/oPvpcKE\"",
+		"mtime": "2026-09-20T15:19:13.045Z",
+		"size": 356060,
+		"path": "../public/assets/index-DY2-0U6V.js"
+	},
+	"/assets/playlists._playlistId-CrLykzxR.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"318-/A/5DHci3mQf+BBGpb26NZrYB1Y\"",
+		"mtime": "2026-09-20T15:19:13.055Z",
+		"size": 792,
+		"path": "../public/assets/playlists._playlistId-CrLykzxR.js"
+	},
+	"/assets/plus-Dg7OnWMV.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"96-dRFBmu46ODo06LtvJ9byJq1xRWY\"",
+		"mtime": "2026-09-20T15:19:13.056Z",
+		"size": 150,
+		"path": "../public/assets/plus-Dg7OnWMV.js"
+	},
+	"/assets/preload-helper-L5J6V32X.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"186e-RE8IQw1h/WakvHx27nA5MJt8qso\"",
+		"mtime": "2026-09-20T15:19:13.056Z",
+		"size": 6254,
+		"path": "../public/assets/preload-helper-L5J6V32X.js"
+	},
 	"/covers/luxuryvibes.jpg": {
 		"type": "image/jpeg",
 		"etag": "\"1f1c-69gfoBV7FTf15zDEUQrFvddcmiY\"",
 		"mtime": "2026-09-20T13:12:35.160Z",
 		"size": 7964,
 		"path": "../public/covers/luxuryvibes.jpg"
+	},
+	"/assets/recent-Cq07rG34.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"1a5-zjnF8J9MnUNNBUwVhMRU2tYrR5w\"",
+		"mtime": "2026-09-20T15:19:13.057Z",
+		"size": 421,
+		"path": "../public/assets/recent-Cq07rG34.js"
+	},
+	"/assets/routes-FQ_lL8zk.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"bc8-uZqASbWFwE0s730oEvsg6CtNpPw\"",
+		"mtime": "2026-09-20T15:19:13.059Z",
+		"size": 3016,
+		"path": "../public/assets/routes-FQ_lL8zk.js"
+	},
+	"/assets/PlayerContext-BK3HHl2i.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"d32e-raQ+dNjD0cSQ4XF27GMSrIAbXEQ\"",
+		"mtime": "2026-09-20T15:19:13.049Z",
+		"size": 54062,
+		"path": "../public/assets/PlayerContext-BK3HHl2i.js"
+	},
+	"/assets/search-CZD8PYgm.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"8f7-cj9BHwCUlLkv1FFeRUC7JMfxgb4\"",
+		"mtime": "2026-09-20T15:19:13.059Z",
+		"size": 2295,
+		"path": "../public/assets/search-CZD8PYgm.js"
+	},
+	"/assets/search-DpYyY6ej.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"307-YdkOubSBc2TaW8OuWU2aGPy2nUE\"",
+		"mtime": "2026-09-20T15:19:13.060Z",
+		"size": 775,
+		"path": "../public/assets/search-DpYyY6ej.js"
+	},
+	"/assets/songs-CARj7Yio.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"1f6-8OB8LkE3dwNu0Ti1RH7BiKnKHrs\"",
+		"mtime": "2026-09-20T15:19:13.061Z",
+		"size": 502,
+		"path": "../public/assets/songs-CARj7Yio.js"
+	},
+	"/assets/styles-D2z2Jve_.css": {
+		"type": "text/css; charset=utf-8",
+		"etag": "\"12d91-YIJVOpmZxFzJhBInXw1nt+eWxaE\"",
+		"mtime": "2026-09-20T15:19:13.061Z",
+		"size": 77201,
+		"path": "../public/assets/styles-D2z2Jve_.css"
+	},
+	"/assets/SongRow-CNBiUepF.js": {
+		"type": "text/javascript; charset=utf-8",
+		"etag": "\"17056-9W20bUpvxHFUHO/2FjVadAr5Dtg\"",
+		"mtime": "2026-09-20T15:19:13.049Z",
+		"size": 94294,
+		"path": "../public/assets/SongRow-CNBiUepF.js"
+	},
+	"/music/playlist/AI/Owl City & Carly Rae Jepsen - Good Time.mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"311394-tC0P+SSXCF7UC5VnOFMPkFSGL1E\"",
+		"mtime": "2026-05-23T12:25:43.188Z",
+		"size": 3216276,
+		"path": "../public/music/playlist/AI/Owl City & Carly Rae Jepsen - Good Time.mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Cool Off (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"538dec-Y57q5vjOU9gS+ay9jycSUCkXaeg\"",
+		"mtime": "2025-09-22T06:00:25.555Z",
+		"size": 5475820,
+		"path": "../public/music/playlist/AI/Renegade Stories - Cool Off (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Kahel Na Langit (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"5794f1-H3BpFwxw+PQPMnLnp88brLLg4hA\"",
+		"mtime": "2025-09-19T09:39:41.541Z",
+		"size": 5739761,
+		"path": "../public/music/playlist/AI/Renegade Stories - Kahel Na Langit (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Naiilang (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"55c616-06nyhYW5rbnfK1g+rQ7wuAZUq3c\"",
+		"mtime": "2025-09-22T06:04:25.991Z",
+		"size": 5621270,
+		"path": "../public/music/playlist/AI/Renegade Stories - Naiilang (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - MULI (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"5e895a-WNGmdz6WysREz+50E0ED/Kpk5us\"",
+		"mtime": "2025-09-19T09:40:01.306Z",
+		"size": 6195546,
+		"path": "../public/music/playlist/AI/Renegade Stories - MULI (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Oksihina (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"5b43cd-il4fukkPr2Bn2jczmufzXWp+hw0\"",
+		"mtime": "2025-09-22T06:01:00.444Z",
+		"size": 5981133,
+		"path": "../public/music/playlist/AI/Renegade Stories - Oksihina (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Synesthesia (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"5d749e-n1QocF9lzk3Nz0g+uYXdG5PAXFA\"",
+		"mtime": "2025-09-19T09:40:21.105Z",
+		"size": 6124702,
+		"path": "../public/music/playlist/AI/Renegade Stories - Synesthesia (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Sagada (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"5eeb4f-dZH0BssGotLH/QoHkvGy7s87apo\"",
+		"mtime": "2025-09-22T05:59:43.969Z",
+		"size": 6220623,
+		"path": "../public/music/playlist/AI/Renegade Stories - Sagada (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Sa Susunod Na Habang Buhay (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"5e895a-Umurby5LItMcaZTGo74/pIhA/BU\"",
+		"mtime": "2025-09-19T09:41:22.799Z",
+		"size": 6195546,
+		"path": "../public/music/playlist/AI/Renegade Stories - Sa Susunod Na Habang Buhay (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Byahe (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"60bf10-jZ/g5i6z2C0ry5Xuvm3UyPKxxCQ\"",
+		"mtime": "2025-09-22T06:00:05.799Z",
+		"size": 6340368,
+		"path": "../public/music/playlist/AI/Renegade Stories - Byahe (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - MULTO (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"66fbcd-cxqZ3gTUvEXSHI+Qoj5OuuGdsQY\"",
+		"mtime": "2025-09-19T09:39:16.334Z",
+		"size": 6749133,
+		"path": "../public/music/playlist/AI/Renegade Stories - MULTO (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Burnout (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"698e93-ow/UNe+sxOo00Jwx0IH1lfjeWik\"",
+		"mtime": "2025-09-22T06:01:49.423Z",
+		"size": 6917779,
+		"path": "../public/music/playlist/AI/Renegade Stories - Burnout (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Hale - Blue Sky (Official Lyric Video).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"69a49e-n+re5IWUd51Wm0qd11rgEK4ind0\"",
+		"mtime": "2026-05-23T10:59:43.420Z",
+		"size": 6923422,
+		"path": "../public/music/playlist/AI/Hale - Blue Sky (Official Lyric Video).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Bawat Daan (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"6d9325-KlJO6xdA/lVqZ22/hHD93NkNQsQ\"",
+		"mtime": "2025-09-22T05:55:28.919Z",
+		"size": 7181093,
+		"path": "../public/music/playlist/AI/Renegade Stories - Bawat Daan (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Oks Lang (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"6bb80b-bfZ4GMku5Q6h8FoiVEpiBfPMrNY\"",
+		"mtime": "2025-09-22T06:01:15.477Z",
+		"size": 7059467,
+		"path": "../public/music/playlist/AI/Renegade Stories - Oks Lang (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - OO (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"6b02d2-N44KHzejdw9Qxut/wKO99Gkq3u0\"",
+		"mtime": "2025-09-22T05:59:28.693Z",
+		"size": 7013074,
+		"path": "../public/music/playlist/AI/Renegade Stories - OO (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Your Song (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"5620b2-AfMu74tsFNTlfMVjTWw2VIAOIOo\"",
+		"mtime": "2025-09-19T09:41:05.812Z",
+		"size": 5644466,
+		"path": "../public/music/playlist/AI/Renegade Stories - Your Song (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Nandito Ako (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"751a7e-0hoqXICTFLyi2EucMvZTyqqCBfc\"",
+		"mtime": "2025-09-19T09:38:28.255Z",
+		"size": 7674494,
+		"path": "../public/music/playlist/AI/Renegade Stories - Nandito Ako (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Pahina (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"742598-UBzUtMUKawHerxIujCv2b+GTLeE\"",
+		"mtime": "2025-09-19T09:38:09.715Z",
+		"size": 7611800,
+		"path": "../public/music/playlist/AI/Renegade Stories - Pahina (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Tunay (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"5e3130-5oQqvFboXMcSBun5+WQ0QKLUwYE\"",
+		"mtime": "2025-09-22T06:00:44.096Z",
+		"size": 6172976,
+		"path": "../public/music/playlist/AI/Renegade Stories - Tunay (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Ikaw Lang Patutunguhan (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"7a5fe1-IpZ6Eo4dV6vZ3zDNaN9Ua8XLlnk\"",
+		"mtime": "2025-09-19T09:40:58.167Z",
+		"size": 8019937,
+		"path": "../public/music/playlist/AI/Renegade Stories - Ikaw Lang Patutunguhan (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Sa Bawat Sandali (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"7b1a01-t2rFPYta5/v7rNRekM7yRwQ1CK0\"",
+		"mtime": "2025-09-19T09:38:44.760Z",
+		"size": 8067585,
+		"path": "../public/music/playlist/AI/Renegade Stories - Sa Bawat Sandali (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Tadhana (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"646906-se0GFs5bewY7jkX6/86PagdW5OY\"",
+		"mtime": "2025-09-22T06:02:16.981Z",
+		"size": 6580486,
+		"path": "../public/music/playlist/AI/Renegade Stories - Tadhana (Rock Cover).mp3"
+	},
+	"/music/playlist/AI/Renegade Stories - Umaasa Lang Sayo (Rock Cover).mp3": {
+		"type": "audio/mpeg",
+		"etag": "\"668d98-+xFvTCpsdq/+tHTqQe43M/wezUc\"",
+		"mtime": "2025-09-22T05:58:29.410Z",
+		"size": 6720920,
+		"path": "../public/music/playlist/AI/Renegade Stories - Umaasa Lang Sayo (Rock Cover).mp3"
 	},
 	"/music/playlist/LuxuryVibes/stereo love x on the floor _ slowed n reverb.mp4": {
 		"type": "video/mp4",
@@ -212,13 +401,6 @@ var public_assets_data_default = {
 		"size": 1,
 		"path": "../public/music/playlist/LuxuryVibes/stereo love x on the floor _ slowed n reverb.mp4"
 	},
-	"/music/playlist/LuxuryVibes/Katy Perry - Harleys In Hawaii (Lyrics) _You and I, Ridin' Harleys in Hawaii.mp4": {
-		"type": "video/mp4",
-		"etag": "\"4ff44e-UFv7bEONJ0370wuIp6Rcs8mtnvY\"",
-		"mtime": "2026-09-20T11:09:20.557Z",
-		"size": 5239886,
-		"path": "../public/music/playlist/LuxuryVibes/Katy Perry - Harleys In Hawaii (Lyrics) _You and I, Ridin' Harleys in Hawaii.mp4"
-	},
 	"/music/playlist/LuxuryVibes/bye X Kiss It Better - Rihanna & altare.mp4": {
 		"type": "video/mp4",
 		"etag": "\"51cbfe-dVwgLJRdOYjrvLXyyINzmsW0F28\"",
@@ -226,12 +408,12 @@ var public_assets_data_default = {
 		"size": 5360638,
 		"path": "../public/music/playlist/LuxuryVibes/bye X Kiss It Better - Rihanna & altare.mp4"
 	},
-	"/music/playlist/LuxuryVibes/under the influence x I was never there.mp4": {
+	"/music/playlist/LuxuryVibes/Katy Perry - Harleys In Hawaii (Lyrics) _You and I, Ridin' Harleys in Hawaii.mp4": {
 		"type": "video/mp4",
-		"etag": "\"5d66fa-KZYepTeBOGNb4WBNNMaqqbEUWg4\"",
-		"mtime": "2026-09-20T12:57:47.675Z",
-		"size": 6121210,
-		"path": "../public/music/playlist/LuxuryVibes/under the influence x I was never there.mp4"
+		"etag": "\"4ff44e-UFv7bEONJ0370wuIp6Rcs8mtnvY\"",
+		"mtime": "2026-09-20T11:09:20.557Z",
+		"size": 5239886,
+		"path": "../public/music/playlist/LuxuryVibes/Katy Perry - Harleys In Hawaii (Lyrics) _You and I, Ridin' Harleys in Hawaii.mp4"
 	},
 	"/music/playlist/LuxuryVibes/Into You X bye (altare remix) - Ariana Grande.mp4": {
 		"type": "video/mp4",
@@ -246,6 +428,13 @@ var public_assets_data_default = {
 		"mtime": "2026-09-20T10:58:33.697Z",
 		"size": 6839233,
 		"path": "../public/music/playlist/LuxuryVibes/Reed Wonder, Aurora Olivas - The Machine.mp4"
+	},
+	"/music/playlist/LuxuryVibes/under the influence x I was never there.mp4": {
+		"type": "video/mp4",
+		"etag": "\"5d66fa-KZYepTeBOGNb4WBNNMaqqbEUWg4\"",
+		"mtime": "2026-09-20T12:57:47.675Z",
+		"size": 6121210,
+		"path": "../public/music/playlist/LuxuryVibes/under the influence x I was never there.mp4"
 	},
 	"/music/playlist/LuxuryVibes/Doja Cat - Agora Hills.mp4": {
 		"type": "video/mp4",
@@ -338,19 +527,19 @@ var public_assets_data_default = {
 		"size": 54948481,
 		"path": "../public/music/playlist/LuxuryVibes/YAD (Яд) ENGLISH VERSION.mp4"
 	},
-	"/music/playlist/LuxuryVibes/Heidi Montag - I'll Do It.mp4": {
-		"type": "video/mp4",
-		"etag": "\"39b9f56-LBYQALBmclfGMNugPzz9bAhPf0I\"",
-		"mtime": "2026-09-20T11:06:58.980Z",
-		"size": 60530518,
-		"path": "../public/music/playlist/LuxuryVibes/Heidi Montag - I'll Do It.mp4"
-	},
 	"/music/playlist/LuxuryVibes/ADÉLA - Ain't In LA.mp4": {
 		"type": "video/mp4",
 		"etag": "\"3c9fb10-qwzxdqN6Uqy0tBTevNOuahWvLH0\"",
 		"mtime": "2026-09-20T10:56:15.576Z",
 		"size": 63568656,
 		"path": "../public/music/playlist/LuxuryVibes/ADÉLA - Ain't In LA.mp4"
+	},
+	"/music/playlist/LuxuryVibes/Heidi Montag - I'll Do It.mp4": {
+		"type": "video/mp4",
+		"etag": "\"39b9f56-LBYQALBmclfGMNugPzz9bAhPf0I\"",
+		"mtime": "2026-09-20T11:06:58.980Z",
+		"size": 60530518,
+		"path": "../public/music/playlist/LuxuryVibes/Heidi Montag - I'll Do It.mp4"
 	},
 	"/music/playlist/LuxuryVibes/Lah Pat  - Rodeo (feat. Flo Milli] [Remix] [Official Lyric Video.mp4": {
 		"type": "video/mp4",

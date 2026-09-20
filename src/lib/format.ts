@@ -30,3 +30,26 @@ export function greeting(): string {
   if (h < 18) return "Good afternoon";
   return "Good evening";
 }
+
+export function shuffleArray<T>(items: T[]): T[] {
+  const copy = [...items];
+  for (let index = copy.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    const a = copy[index];
+    const b = copy[swapIndex];
+    if (a === undefined || b === undefined) continue;   // 👈 guard
+    copy[index] = b;
+    copy[swapIndex] = a;
+  }
+  return copy;
+}
+
+export function parseFileName(name: string): { title: string; artist: string } {
+  const base = name.replace(/\.[a-z0-9]+$/i, "").replace(/_/g, " ").trim();
+  const parts = base.split(/\s+[-\u2013]\s+/);
+  const first = parts[0];                                // 👈 narrow it
+  if (first && parts.length >= 2) {
+    return { artist: first.trim(), title: parts.slice(1).join(" - ").trim() };
+  }
+  return { artist: "Unknown artist", title: base };
+}

@@ -559,6 +559,43 @@ var Trash2 = createLucideIcon("trash-2", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var VideoOff = createLucideIcon("video-off", [
+	["path", {
+		d: "M10.66 6H14a2 2 0 0 1 2 2v2.5l5.248-3.062A.5.5 0 0 1 22 7.87v8.196",
+		key: "w8jjjt"
+	}],
+	["path", {
+		d: "M16 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2",
+		key: "1xawa7"
+	}],
+	["path", {
+		d: "m2 2 20 20",
+		key: "1ooewy"
+	}]
+]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Video = createLucideIcon("video", [["path", {
+	d: "m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5",
+	key: "ftymec"
+}], ["rect", {
+	x: "2",
+	y: "6",
+	width: "14",
+	height: "12",
+	rx: "2",
+	key: "158x01"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Volume2 = createLucideIcon("volume-2", [
 	["path", {
 		d: "M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z",
@@ -613,4 +650,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { Disc3 as C, Check as D, ChevronRight as E, Download as S, Circle as T, LoaderCircle as _, SkipForward as a, House as b, Search as c, Plus as d, Play as f, MicVocal as g, Music2 as h, Trash2 as i, Repeat as l, Music4 as m, VolumeX as n, SkipBack as o, Pause as p, Volume2 as r, Shuffle as s, X as t, Repeat1 as u, ListPlus as v, Clock as w, Heart as x, ListMusic as y };
+export { Heart as C, Circle as D, Clock as E, ChevronRight as O, House as S, Disc3 as T, Music2 as _, VideoOff as a, ListPlus as b, SkipBack as c, Repeat as d, Repeat1 as f, Music4 as g, Pause as h, Video as i, Check as k, Shuffle as l, Play as m, VolumeX as n, Trash2 as o, Plus as p, Volume2 as r, SkipForward as s, X as t, Search as u, MicVocal as v, Download as w, ListMusic as x, LoaderCircle as y };

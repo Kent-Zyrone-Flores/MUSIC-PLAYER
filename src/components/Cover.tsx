@@ -11,7 +11,7 @@ export function Cover({
   seed: string;
   className?: string;
   iconClassName?: string;
-  imageUrl?: string;
+  imageUrl?: string | undefined;   // 👈 add | undefined
 }) {
   return (
     <div

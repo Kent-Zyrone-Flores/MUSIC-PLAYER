@@ -192,19 +192,19 @@ export function loadLibrary(): LibraryState {
 
     // For default playlists, prefer the fresh defaults (correct song list + cover),
     // but keep any user renames or added songs from storage.
-    const mergedPlaylists = defaultPlaylists.map((def) => {
-      const saved = savedPlaylists.find((p) => p.id === def.id);
-      if (!saved) return def;
-      // Union of default songs + any extra songs the user added.
-      const extra = saved.songs.filter((id) => !def.songs.includes(id));
-      return {
-        ...def,
-        ...saved,               // keeps renamed name/description if user changed them
-        cover: def.cover,       // always keep the bundled cover
-        songs: [...def.songs, ...extra],
-      };
-    });
-    mergedPlaylists.push(...userPlaylists);
+const mergedPlaylists: Playlist[] = defaultPlaylists.map((def) => {
+  const saved = savedPlaylists.find((p) => p.id === def.id);
+  if (!saved) return def;
+  const extra = saved.songs.filter((id) => !def.songs.includes(id));
+  const merged: Playlist = {
+    ...def,
+    ...saved,
+    cover: def.cover,                                    // 👈 always a string here
+    songs: [...def.songs, ...extra],
+  };
+  return merged;
+});
+mergedPlaylists.push(...userPlaylists);
 
     return {
       songs: mergedSongs,
