@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { ImportButton } from './components/ImportButton';
 import { PlayerBar } from './components/PlayerBar';
 import { PlayerProvider, usePlayer } from './context/PlayerContext';
-import './styles.css';
 
 const sidebarLinks = [
   { label: 'Home', icon: '⌂' },
