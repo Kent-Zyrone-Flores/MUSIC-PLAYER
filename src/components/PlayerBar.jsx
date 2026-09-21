@@ -2,7 +2,7 @@ import { Cover } from "@/components/Cover";
 import { usePlayer } from "@/context/PlayerContext";
 import { formatTime } from "@/lib/library";
 import { cn } from "@/lib/utils";
-import { Heart, ListMusic, Pause, Play, Repeat, Repeat1, Shuffle, SkipBack, SkipForward, Video, VideoOff, Volume2, VolumeX, X,  } from "lucide-react";
+import { Heart, ListMusic, Pause, Play, Repeat, Repeat1, Shuffle, SkipBack, SkipForward, Video, VideoOff, Volume2, VolumeX, X, } from "lucide-react";
 import { useState } from "react";
 
 export function PlayerBar() {
@@ -189,6 +189,9 @@ export function PlayerBar() {
           />
         </div>
       </footer>
+      <footer className="p-0.1 text-left text-xs text-muted-foreground font-semibold font-mono">
+            <p>DEVELOPER: KENT ZYRONE FLORES</p>
+        </footer>
     </div>
   );
 }

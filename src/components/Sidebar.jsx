@@ -21,10 +21,12 @@ export function Sidebar() {
   return (
     <aside className="hidden w-60 shrink-0 flex-col gap-6 overflow-y-auto border-r border-sidebar-border bg-sidebar px-4 py-6 scroll-slim md:flex">
       <Link to="/" className="flex items-center gap-2 px-2">
-        <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-          <Music4 className="h-5 w-5" />
-        </span>
-        <span className="font-display text-lg font-semibold">Z Music</span>
+        <img
+          src="/images/zlogo.jpg"
+          alt="Z Music"
+          className="h-9 w-9 rounded-xl object-cover"
+        />
+        <span className="font-display text-lg font-semibold">Music</span>
       </Link>
 
       <nav className="flex flex-col gap-1">

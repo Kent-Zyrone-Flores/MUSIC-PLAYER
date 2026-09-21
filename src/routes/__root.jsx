@@ -1,6 +1,5 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HeadContent, Link, Outlet, Scripts, createRootRouteWithContext, useRouter,  } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { HeadContent, Link, Outlet, Scripts, createRootRouteWithContext, useRouter } from "@tanstack/react-router";
 
 import { PlayerBar } from "@/components/PlayerBar";
 import { Sidebar } from "@/components/Sidebar";
@@ -35,7 +34,7 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }) {
   console.error(error);
   const router = useRouter();
-  
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
@@ -78,17 +77,15 @@ export const Route = createRootRouteWithContext()({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/images/zlogo.jpg", type: "image/jpeg" },
+      { rel: "apple-touch-icon", href: "/images/zlogo.jpg" },
     ],
   }),
   shellComponent: RootShell,
