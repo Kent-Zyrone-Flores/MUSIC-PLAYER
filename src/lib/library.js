@@ -127,6 +127,24 @@ const DEFAULT_PLAYLISTS = [
       "Bruno Mars - When I Was Your Man (Official Music Video).mp4",
     ],
   },
+  {
+    id: "maroon-5",
+    name: "Maroon 5",
+    description: "Maroon 5 music collection",
+    cover: "/covers/maroon5.jpg",
+    files: [
+      "Maroon 5 - Animals (Lyrics).mp3",
+      "Maroon 5 - Beautiful Goodbye (Lyrics).mp3",
+      "Maroon 5 - Maps (Lyric Video).mp3",
+      "Maroon 5 - She Will Be Loved (Official Music Video).mp3",
+      "Maroon 5 - Sunday Morning.mp3",
+      "Maroon 5 - This Love.mp3",
+      "Maroon 5 - Wait (Official Music Video).mp3",
+      "Maroon 5 - What Lovers Do ft. SZA (Official Music Video).mp3",
+      "Maroon 5 - Won't Go Home Without You (Lyrics).mp3",
+      "Maroon 5, Wiz Khalifa – Payphone (Lyrics).mp3",
+    ],
+  },
 ];
 
 /** Turn the folder list into real Song objects. */

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/albums")({
   component: Albums,
 });
 
-const coverMap = { "AI": "ai", "Bruno Mars": "brunomars", "Chris Brown": "chrisbrown", "Hiphop": "hiphop", "KPOP": "kpop", "Luxury Vibes": "luxuryvibes" };
+const coverMap = { "AI": "ai", "Bruno Mars": "brunomars", "Chris Brown": "chrisbrown", "Hiphop": "hiphop", "KPOP": "kpop", "Luxury Vibes": "luxuryvibes", "Maroon 5": "maroon5" };
 
 function Albums() {
   const { songs } = usePlayer();
