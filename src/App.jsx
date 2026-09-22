@@ -1,7 +1,17 @@
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useEffect, useRef } from 'react';
 import { ImportButton } from './components/ImportButton';
 import { PlayerBar } from './components/PlayerBar';
 import { PlayerProvider, usePlayer } from './context/PlayerContext';
+
+export default function App() {
+  return (
+    <div>
+      {/* ... */}
+      <SpeedInsights />
+    </div>
+  );
+}
 
 const sidebarLinks = [
   { label: 'Home', icon: '⌂' },
